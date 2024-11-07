@@ -1,10 +1,10 @@
 import Footer from "./Footer";
 
-export const Base = ({children}) => {
+export const Base = ({title = "Welcome to our website", children}) => {
     return (
         <div className="p-0">
             {/*  Header  */}
-            {/*<HeaderComponent/>*/}
+            <HeaderComponent/>
             {children}
             {/*  Footer  */}
             <Footer/>

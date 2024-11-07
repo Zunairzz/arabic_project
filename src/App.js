@@ -7,7 +7,6 @@ import BoxesDetails from './pages/BoxesDetails'
 import Calendar from '../src/pages/Calendar'
 import ConferencePage from '../src/pages/ConferencePage'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {HomeComponentOne} from "./component/HomeComponentOne";
 
 function App() {
     return (
