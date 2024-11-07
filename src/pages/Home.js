@@ -1,9 +1,12 @@
 import {Base} from "../component/Base";
+import {HomeComponentOne} from "../component/HomeComponentOne";
+import ConferenceSection from "./ConferenceSection";
 
 export function Home() {
     return (
         <Base>
-            <h1>This is Home Page</h1>
+            <HomeComponentOne/>
+            <ConferenceSection/>
         </Base>
     )
 }
