@@ -1,40 +1,40 @@
 // Import necessary modules
 import React from 'react';
-import {Container, Row, Col, Card, CardBody, CardText} from 'reactstrap';
-import {FaEnvelope, FaEye, FaBalanceScale, FaHammer} from 'react-icons/fa';
+import {Card, CardBody, CardText, Col, Container, Row} from 'reactstrap';
+import {FaBalanceScale, FaEnvelope, FaEye, FaHammer} from 'react-icons/fa';
 
 const ConferencePage = () => {
     const style = {
-        card:{
+        card: {
             height: '200px',
             width: 'auto',
             border: 'none',
             backgroundColor: 'rgb(237, 237, 237)',
             display: 'flex',
             alignItems: 'center',
-            textAlign:'right',
+            textAlign: 'right',
             justifyContent: 'center',
-            marginTop:'35px',
+            marginTop: '35px',
             borderBottom: '7px solid blue',
-            borderRadius:'0px'
+            borderRadius: '0px'
         },
-        card2:{
+        card2: {
             height: '100px',
             width: 'auto',
             border: 'none',
             backgroundColor: 'rgb(237, 237, 237)',
             display: 'flex',
             alignItems: 'center',
-            textAlign:'right',
+            textAlign: 'right',
             justifyContent: 'center',
-            marginTop:'35px',
+            marginTop: '35px',
             borderRight: '6px solid blue',
-            borderRadius:'0px'
+            borderRadius: '0px'
         }
     }
     return (
         <Container className="mt-5">
-            <Row style={{textAlign:'right',marginBottom:'25px'}}>
+            <Row style={{textAlign: 'right', marginBottom: '25px'}}>
                 <Col md="6">
                     <h4 className="text-primary" style={{textAlign: 'right'}}>الرؤية</h4>
                     <Card className="mb-4 shadow-sm" style={style.card}>
@@ -64,12 +64,12 @@ const ConferencePage = () => {
             {/* Conference Goals Section */}
             <Row>
                 <Col>
-                    <h4 style={{color:'blue',textAlign:'right',marginBottom:'-16px'}}>أهداف المؤتمر</h4>
+                    <h4 style={{color: 'blue', textAlign: 'right', marginBottom: '-16px'}}>أهداف المؤتمر</h4>
                 </Col>
             </Row>
             <Row>
                 <Col md="6">
-                    <Card  style={style.card2}>
+                    <Card style={style.card2}>
                         <CardBody className="d-flex align-items-center">
                             <CardText className="mt-3" style={{flex: 1}}>
                                 إبراز خطوات قطاع المحاماة والاستشارات القانونية في المملكة وأثرها على رفع موثوقية
@@ -80,19 +80,19 @@ const ConferencePage = () => {
                     </Card>
                 </Col>
                 <Col md="6">
-                    <Card  style={style.card2}>
+                    <Card style={style.card2}>
                         <CardBody className="d-flex align-items-center">
                             <CardText className="mt-3" style={{flex: 1}}>
                                 إبراز أهم التطورات التشريعية في قطاع المحاماة والاستشارات القانونية في المملكة
                             </CardText>
-                           <FaBalanceScale size={60} style={{marginLeft: '50px'}}/>
+                            <FaBalanceScale size={60} style={{marginLeft: '50px'}}/>
                         </CardBody>
                     </Card>
                 </Col>
             </Row>
             <Row className="mb-4">
                 <Col md="6">
-                    <Card  style={style.card2}>
+                    <Card style={style.card2}>
                         <CardBody className="d-flex align-items-center">
                             <CardText className="mt-3" style={{flex: 1}}>
                                 إبراز أهم التطورات التقنية والتحولات الرقمية في قطاع المحاماة والاستشارات القانونية في
@@ -104,11 +104,11 @@ const ConferencePage = () => {
                 </Col>
                 <Col md="6">
                     <Card className="" style={style.card2}>
-                        <CardBody  className="d-flex align-items-center">
+                        <CardBody className="d-flex align-items-center">
                             <CardText className="mt-3 text-center" style={{flex: 1}}>
                                 تحقيق العدالة الناجزة، وزيادة الفرص الوظيفية والاستشارية في المملكة
                             </CardText>
-                            <FaHammer size={60} style={{marginLeft: '50px'}} />
+                            <FaHammer size={60} style={{marginLeft: '50px'}}/>
                         </CardBody>
                     </Card>
                 </Col>
