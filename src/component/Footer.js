@@ -4,35 +4,48 @@ import {FaFacebook, FaInstagram, FaSnapchat, FaLinkedin, FaYoutube, FaTwitter} f
 import logo from '../asset/Logo.png'
 
 const Footer = () => {
+    const style = {
+        textField: {
+            backgroundColor: '#6f7dbb',
+            borderRadius: '20px',
+            color: '#ffffff',
+            textAlign:'right'
+        }
+    }
     return (
 
         <div style={{backgroundColor: '#0b1a8a', color: '#ffffff', padding: '20px 0'}}>
             <Container>
-            <Row className="d-flex justify-content-center align-items-center mt-5">
-                <Col md="6" className="mb-3">
-                    <FormGroup >
-                        <Label for="name" style={{ color: '#ffffff' ,paddingLeft:'530px'}}>البريد الإلكتروني</Label>
-                        <Input type="text" id="name" placeholder="" style={{ backgroundColor: '#6f7dbb', borderRadius: '20px', color: '#ffffff' }} />
-                    </FormGroup>
-                </Col>
-                <Col md="6" className="mb-3">
-                    <FormGroup>
-                        <Label for="email" style={{ color: '#ffffff',paddingLeft:'600px' }}>الاسم</Label>
-                        <Input type="email" id="email" placeholder="" style={{ backgroundColor: '#6f7dbb', borderRadius: '20px', color: '#ffffff' }} />
-                    </FormGroup>
-                </Col>
-            </Row>
-                <Row className="d-flex justify-content-center align-items-center">
-                    <Col md="6" className="mb-3">
-                        <FormGroup >
-                            <Label for="name" style={{ color: '#ffffff' ,paddingLeft:'600px'}}>الرسالة</Label>
-                            <Input type="text" id="name" placeholder="" style={{ backgroundColor: '#6f7dbb', borderRadius: '20px', color: '#ffffff' }} />
+                <Row>
+                    <Col className="text-center m-2">
+                        <h5 className="" style={{color: 'white', textAlign: 'right', fontWeight: 'bold'}}>تواصل معنا</h5>
+                    </Col>
+                </Row>
+                <Row style={{textAlign:'right'}}>
+                    <Col md={6}>
+                        <FormGroup>
+                            <Label for="firstName" style={{textAlign: 'right'}}>البريد الإلكتروني</Label>
+                            <Input type="text" name="firstName" id="firstName" placeholder="" style={style.textField}/>
                         </FormGroup>
                     </Col>
-                    <Col md="6" className="mb-3">
+                    <Col md={6} style={{textAlign: 'right'}}>
                         <FormGroup>
-                            <Label for="email" style={{ color: '#ffffff',paddingLeft:'600px' }}>الجوال</Label>
-                            <Input type="email" id="email" placeholder="" style={{ backgroundColor: '#6f7dbb', borderRadius: '20px', color: '#ffffff' }} />
+                            <Label for="email">الاسم</Label>
+                            <Input type="email" name="email" id="email" placeholder="" style={style.textField}/>
+                        </FormGroup>
+                    </Col>
+                </Row>
+                <Row style={{textAlign:'right'}}>
+                    <Col md={6}>
+                        <FormGroup>
+                            <Label for="firstName" style={{textAlign: 'right'}}>الرسالة</Label>
+                            <Input type="text" name="firstName" id="firstName" placeholder="" style={style.textField}/>
+                        </FormGroup>
+                    </Col>
+                    <Col md={6} style={{textAlign: 'right'}}>
+                        <FormGroup>
+                            <Label for="email">الجوال</Label>
+                            <Input type="email" name="email" id="email" placeholder="" style={style.textField}/>
                         </FormGroup>
                     </Col>
                 </Row>
