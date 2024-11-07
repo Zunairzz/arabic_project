@@ -1,14 +1,14 @@
-import Footer from "./Footer";
-import HeaderComponent from "./HeaderComponent";
+import CustomFooter from "./CustomFooter";
+import CustomNavbar from "./CustomNavbar";
 
 export const Base = ({title = "Welcome to our website", children}) => {
     return (
         <div className="p-0">
             {/*  Header  */}
-            <HeaderComponent/>
+            <CustomNavbar/>
             {children}
-            {/*  Footer  */}
-            <Footer/>
+            {/*  CustomFooter  */}
+            <CustomFooter/>
         </div>
     );
 };

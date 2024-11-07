@@ -10,7 +10,7 @@ import Logo from "../asset/HeaderLogo.png";
 import "../style/fonts.css";
 
 const navigation = [
-    // {name: 'المتحدثين', href: '/'},
+    {name: 'المتحدثين', href: '/regmethod'},
     {name: 'التسجيل', href: '/con'},
     {name: 'الرعايات', href: '/box'},
     {name: 'الجهات والرعاة', href: '/reg2'},
@@ -19,7 +19,7 @@ const navigation = [
     {name: 'عن المؤتمر', href: '/'},
 ]
 
-export default function Navbar6() {
+export default function CustomNavbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const location = useLocation();
 
@@ -29,7 +29,7 @@ export default function Navbar6() {
         }
     }
     return (
-        <div style={{marginBottom: '15rem', fontFamily: "DiodrumMedium"}}>
+        <div style={{marginBottom: '15rem', fontFamily: "DiodrumRegular"}}>
             <header className="absolute inset-x-0 top-0 z-50">
                 <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8 custom-navbar-bg">
                     <div className="flex lg:flex-1">

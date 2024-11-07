@@ -3,102 +3,82 @@ import personImage from '../asset/Person.png';
 import "../style/fonts.css";
 
 export function HomeComponentOne() {
-
-    const style = {
-        customFont: {
-            fontFamily: "DiodrumMedium"
-        },
-        leftCard: {
+    const styles = {
+        customFont: {fontFamily: "DiodrumMedium"},
+        cardBase: {
             backgroundColor: "rgb(78,10,171)",
             color: "white",
-            width: "120px",
+            width: "125px",
             height: "100px",
-            borderTopLeftRadius: "15px",
-            borderBottomLeftRadius: "15px",
             textAlign: "center",
-            display: "block",
+            display: "flex",
+            flexDirection: "column", // Aligns items vertically
             justifyContent: "center",
             alignItems: "center",
-            alignContent: "center"
         },
-        middleCard: {
-            backgroundColor: "rgb(78,10,171)",
-            color: "white",
-            width: "120px",
-            height: "100px",
-            textAlign: "center",
-            display: "block",
-            justifyContent: "center",
-            alignItems: "center",
-            alignContent: "center"
+        cardLeft: {borderTopLeftRadius: "15px", borderBottomLeftRadius: "15px"},
+        cardRight: {borderTopRightRadius: "15px", borderBottomRightRadius: "15px"},
+        cardHeading: {
+            paddingTop: "13px",
+            fontSize: "33px",
+            fontFamily: "DiodrumBold"
         },
-        rightCard: {
-            backgroundColor: "rgb(78,10,171)",
-            color: "white",
-            width: "120px",
-            height: "100px",
-            textAlign: "center",
-            display: "block",
-            justifyContent: "center",
-            alignItems: "center",
-            alignContent: "center",
-            borderTopRightRadius: "15px",
-            borderBottomRightRadius: "15px",
+        cardSubHeading: {
+            marginTop: "-13px",
+            fontSize: "26px",
+            fontFamily: "DiodrumRegular"
         },
         paragraph: {
+            color: "rgb(96,96,96)",
+            marginTop: "30px",
             textAlign: "right",
-            fontSize: '40px'
+            fontSize: '36px'
         },
         heading: {
+            color: "rgb(80,177,177)",
+            fontFamily: "DiodrumBold",
             textAlign: "right",
-            fontSize: "40px",
-            fontWeight: 'bold',
+            fontSize: "50px",
         },
         subHeading: {
+            fontFamily: "DiodrumBold",
             textAlign: "right",
-            fontSize: "56px",
-            fontWeight: 'bold',
+            fontSize: "70px",
+            color: "rgb(12,12,150)",
         }
-    }
+    };
+
     return (
-        <Container style={style.customFont}>
+        <Container style={styles.customFont}>
             <Row className="d-flex justify-content-between">
                 <Col xl={4} md={4} sm={4}>
-                    <img src={personImage} alt="image here..."/>
+                    <img src={personImage} alt="Person"/>
                 </Col>
                 <Col xl={6} md={6} sm={6} style={{textAlign: "right"}}>
-                    <div className="d-inline-flex gap-3">
-                        <div style={style.leftCard}>
-                            <h6>00</h6>
-                            <p>ﺍﻻﻳﺎﻡ</p>
-                        </div>
-                        <div style={style.middleCard}>
-                            <h6>00</h6>
-                            <p>ﺍﻟﺴﺎﻋﺎﺕ</p>
-                        </div>
-                        <div style={style.middleCard}>
-                            <h6>00</h6>
-                            <p>ﺍﻟﺪﻗﺎﺋﻖ</p>
-                        </div>
-                        <div style={style.rightCard}>
-                            <h6>00</h6>
-                            <p>ﺍﻟﺜﻮﺍﻧﻲ</p>
-                        </div>
+                    <div className="d-inline-flex gap-4">
+                        {['ﺍﻻﻳﺎﻡ', 'ﺍﻟﺴﺎﻋﺎﺕ', 'ﺍﻟﺪﻗﺎﺋﻖ', 'ﺍﻟﺜﻮﺍﻧﻲ'].map((text, index) => (
+                            <div
+                                key={index}
+                                style={{
+                                    ...styles.cardBase,
+                                    ...(index === 0 ? styles.cardLeft : index === 3 ? styles.cardRight : {})
+                                }}
+                            >
+                                <h6 style={styles.cardHeading}>00</h6>
+                                <p style={styles.cardSubHeading}>{text}</p>
+                            </div>
+                        ))}
                     </div>
                     <div>
-                        <p style={style.paragraph}>
+                        <p style={styles.paragraph}>
                             ﺑﺮﻋﺎﻳﺔ ﻣﻌﺎﻟﻲ ﻭﺯﻳﺮ ﺍﻟﻌﺪﻝ ﺭﺋﻴﺲ ﻣﺠﻠﺲ
                             ﺇﺩﺍﺭﺓ ﺍﻟﻬﻴﺌــــﺔ ﺍﻟﺴﻌـــﻮﺩﻳﺔ ﻟﻠﻤﺤﺎﻣﻴـــﻦ
                         </p>
-                        <p style={style.heading}>
-                            ﺩ. ﻭﻟﻴﺪ ﺑﻦ ﻣﺤﻤﺪ ﺍﻟﺼﻤﻌﺎﻧﻲ
-                        </p>
-                        <p style={style.subHeading}>
-                            ﻋـﻦ ﺍﻟﻤﺆﺗﻤـﺮ
-                        </p>
+                        <p style={styles.heading}>ﺩ. ﻭﻟﻴﺪ ﺑﻦ ﻣﺤﻤﺪ ﺍﻟﺼﻤﻌﺎﻧﻲ</p>
+                        <p style={styles.subHeading}>ﻋـﻦ ﺍﻟﻤﺆﺗﻤـﺮ</p>
                     </div>
                 </Col>
             </Row>
         </Container>
-    )
+    );
 }

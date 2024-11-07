@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
-    Container,
-    Row,
-    Col,
+    Button,
+    Card,
+    CardBody,
+    CardImg,
+    CardText,
+    CardTitle,
     Carousel,
+    CarouselControl,
     CarouselItem,
-    CarouselCaption,
-    CarouselIndicators,
-    CarouselControl, CardImg, CardBody, CardTitle, Button, CardText, Card
+    Col,
+    Container,
+    Row
 } from 'reactstrap';
 import image1 from '../asset/SliderImage/1.png';
 import image2 from '../asset/SliderImage/2.png';
@@ -77,7 +81,7 @@ const ConferenceSection = () => {
                 <Row className="d-flex justify-content-center">
                     <Col md={4} className="mb-4"> {/* md=4 for 3 cards per row */}
                         <Card>
-                            <CardImg top width="100%" src={card.image} alt={card.title} />
+                            <CardImg top width="100%" src={card.image} alt={card.title}/>
                             <CardBody>
                                 <CardTitle tag="h5">{card.title}</CardTitle>
                                 <CardText>{card.text}</CardText>
@@ -91,11 +95,22 @@ const ConferenceSection = () => {
     });
 
     const style = {
+        mainHeading: {
+            fontFamily: "DiodrumBold",
+        },
+        cardHeading: {
+            fontFamily: "DiodrumBold",
+            color: 'rgb(2,180,178)',
+        },
+        cardParagraph: {
+            fontFamily: "DiodrumRegular",
+            color: "rgb(96,96,96)"
+        },
         description: {
-            background: 'lightgray',
+            background: 'rgb(237,237,237)',
             textAlign: 'right',
-            borderRight: '6px solid rgb(2,180,178)',
-            borderLeft: '6px solid rgb(2,180,178)',
+            borderRight: '10px solid rgb(2,180,178)',
+            borderLeft: '10px solid rgb(2,180,178)',
             minHeight: "170px",
         }
     };
@@ -103,47 +118,52 @@ const ConferenceSection = () => {
     return (
         <Container className="my-5">
             {/* Title Section */}
-            <Row className="mb-4" style={{ textAlign: 'right', color: "rgb(13,13,157)" }}>
+            <Row className="mb-4" style={{textAlign: 'right', color: "rgb(13,13,157)"}}>
                 <Col>
-                    <h2>ركائز مؤتمر المحاماة السعودي</h2>
+                    <h2 style={style.mainHeading}>ركائز مؤتمر المحاماة السعودي</h2>
                 </Col>
             </Row>
             <Row style={style.description}>
                 <Col md={6} className="mt-3">
-                    <h3 style={{ color: 'rgb(2,180,178)' }}>مهني</h3>
-                    <p>
-                        تمكين المهن القانونية وتعزيز قطاع الأعمال، مع التركيز على دور الهيئة السعودية للمحامين في ضبط المخالفات وزيادة الموثوقية،
+                    <h3 style={style.cardHeading}>مهني</h3>
+                    <p style={style.cardParagraph}>
+                        تمكين المهن القانونية وتعزيز قطاع الأعمال، مع التركيز على دور الهيئة السعودية للمحامين في ضبط
+                        المخالفات وزيادة الموثوقية،
                         واستعراض التطورات القانونية والتقنية وتوطين المهن، إضافة إلى فرص الشراكات المهنية داخل المملكة.
                     </p>
                 </Col>
                 <Col md={6} className="mt-3">
-                    <h3 style={{ color: 'rgb(2,180,178)' }}>تأهيلي</h3>
-                    <p>
-                        تطوير المحامين المتدربين من خلال مناقشة ضوابط التسجيل، التزاماتهم المهنية، التحديات التي تواجههم، وساعات التدريب الإلزامية،
-                        مع التأكيد على أهمية التطوير المهني المستمر ودور الملتقيات والمبادرات القانونية في تأهيل الكفاءات الشابة.
+                    <h3 style={style.cardHeading}>تأهيلي</h3>
+                    <p style={style.cardParagraph}>
+                        تطوير المحامين المتدربين من خلال مناقشة ضوابط التسجيل، التزاماتهم المهنية، التحديات التي
+                        تواجههم، وساعات التدريب الإلزامية،
+                        مع التأكيد على أهمية التطوير المهني المستمر ودور الملتقيات والمبادرات القانونية في تأهيل
+                        الكفاءات الشابة.
                     </p>
                 </Col>
             </Row>
 
             {/* Speakers Section */}
-            <Row className="mb-4" style={{ textAlign: 'right', color: "rgb(13,13,157)" }}>
+            <Row className="mb-4" style={{textAlign: 'right', color: "rgb(13,13,157)"}}>
                 <Col>
                     <h3>المتحدثين</h3>
                 </Col>
             </Row>
             <Container className="my-5">
                 {/* Title Section */}
-                <Row className="mb-4" style={{ textAlign: 'right', color: "rgb(13,13,157)" }}>
+                <Row className="mb-4" style={{textAlign: 'right', color: "rgb(13,13,157)"}}>
                     <Col>
                         <h2>ركائز مؤتمر المحاماة السعودي</h2>
                     </Col>
                 </Row>
 
                 {/* Carousel for the cards */}
-                <Carousel activeIndex={activeIndex} next={next} previous={previous} style={{ color: 'black' }} >
+                <Carousel activeIndex={activeIndex} next={next} previous={previous} style={{color: 'black'}}>
                     {slides}
-                    <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} style={{ color: 'black' }}  />
-                    <CarouselControl direction="next" directionText="Next" onClickHandler={next} style={{ color: 'black' }} />
+                    <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous}
+                                     style={{color: 'black'}}/>
+                    <CarouselControl direction="next" directionText="Next" onClickHandler={next}
+                                     style={{color: 'black'}}/>
                 </Carousel>
             </Container>
         </Container>

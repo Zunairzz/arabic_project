@@ -22,6 +22,7 @@
 
 .custom-active-bg {
     /*background-color: #FD853A !important;*/
-    color: #ff8000 !important;
-    font-weight: bold !important;
+    color: #ffffff !important;
+    font-family: "DiodrumBold", serif;
+    /*font-weight: bold !important;*/
 }

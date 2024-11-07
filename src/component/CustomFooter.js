@@ -3,7 +3,7 @@ import {Col, Container, FormGroup, Input, Label, Row} from 'reactstrap';
 import {FaFacebook, FaInstagram, FaLinkedin, FaSnapchat, FaTwitter, FaYoutube} from 'react-icons/fa';
 import logo from '../asset/HeaderLogo.png'
 
-const Footer = () => {
+const CustomFooter = () => {
     const style = {
         textField: {
             backgroundColor: '#6f7dbb',
@@ -78,4 +78,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default CustomFooter;
