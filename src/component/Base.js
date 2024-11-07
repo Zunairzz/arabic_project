@@ -1,10 +1,12 @@
 import HeaderComponent from "./HeaderComponent";
 
-const Base = ({children}) => {
+export const Base = ({children}) => {
     return (
         <div className="p-0">
             {/*  Header  */}
             <HeaderComponent/>
+
+            {children}
             {/*  Footer  */}
         </div>
     );
