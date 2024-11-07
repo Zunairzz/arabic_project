@@ -1,4 +1,5 @@
 import Footer from "./Footer";
+import HeaderComponent from "./HeaderComponent";
 
 export const Base = ({title = "Welcome to our website", children}) => {
     return (
